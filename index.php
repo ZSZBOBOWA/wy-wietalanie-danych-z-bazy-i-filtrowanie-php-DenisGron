@@ -26,9 +26,7 @@
         $nazwisko = mysqli_real_escape_string($conn, $nazwisko);
 
         $sql = "SELECT * FROM uczniowie WHERE nazwisko='$nazwisko'";
-    } else {
-        $sql = "SELECT * FROM uczniowie";
-    }
+    
 
     $result = mysqli_query($conn, $sql);
 
@@ -40,6 +38,9 @@
         echo "</table>";
     } else {
         echo "Brak wyników";
+    }
+    } else {
+        echo "Nie podałeś nazwiska";
     }
     mysqli_close($conn);
     ?>

@@ -6,19 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <form method="POST" action="index.php">
+        Wpisz nazwisko: <input type="text" name="nazwisko">
+        <input type="submit" value="Szukaj">
+</form>
     <?php
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "myDB";
-
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($servername, $username, $password);
 
     if (!$conn) {
         die ("Błąd połączenia: " . mysqli_connect_error());
     }
     ?>
-
     <?php
     $sql = "SELECT * FROM uczniowie";
     $result = mysqli_query($conn, $sql);
